@@ -1,0 +1,46 @@
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\bin\Debug\ProjetoBD.exe.config
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\bin\Debug\ProjetoBD.exe
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\bin\Debug\ProjetoBD.pdb
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.csproj.AssemblyReference.cache
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.Form1.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.Properties.Resources.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.csproj.GenerateResource.cache
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.exe
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.pdb
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.Inserir_Livros.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.UserControl1.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.welcome.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.inserir_editora.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.inserir_autor.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.invetario.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.fornecedor.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.cliente.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.InputDocs.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.FacVenda.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.FacCompra.resources
+C:\Users\Gabriel\Documents\BD\ProjetoBD\ProjetoBD\obj\Debug\ProjetoBD.HistoricoVendas.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\bin\Debug\ProjetoBD.exe.config
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\bin\Debug\ProjetoBD.exe
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\bin\Debug\ProjetoBD.pdb
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.csproj.AssemblyReference.cache
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.cliente.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.FacCompra.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.FacVenda.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.Form1.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.fornecedor.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.HistoricoVendas.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.InputDocs.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.inserir_autor.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.inserir_editora.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.Inserir_Livros.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.invetario.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.Properties.Resources.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.UserControl1.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.welcome.resources
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.csproj.GenerateResource.cache
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.exe
+C:\Users\Gabriel\OneDrive - Universidade de Aveiro\Desktop\ProjetoBD\obj\Debug\ProjetoBD.pdb

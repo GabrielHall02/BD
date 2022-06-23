@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{106E2A3C-84EA-4550-9AAC-C54F2FFEF6AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoBD</RootNamespace>
+    <AssemblyName>ProjetoBD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cliente.Designer.cs">
+      <DependentUpon>cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacCompra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FacCompra.Designer.cs">
+      <DependentUpon>FacCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacVenda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FacVenda.Designer.cs">
+      <DependentUpon>FacVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fornecedor.Designer.cs">
+      <DependentUpon>fornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricoVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HistoricoVendas.Designer.cs">
+      <DependentUpon>HistoricoVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputDocs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputDocs.Designer.cs">
+      <DependentUpon>InputDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inserir_autor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inserir_autor.Designer.cs">
+      <DependentUpon>inserir_autor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inserir_editora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inserir_editora.Designer.cs">
+      <DependentUpon>inserir_editora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inserir_Livros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inserir_Livros.Designer.cs">
+      <DependentUpon>Inserir_Livros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invetario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="invetario.Designer.cs">
+      <DependentUpon>invetario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LivrariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LivrariaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="welcome.Designer.cs">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cliente.resx">
+      <DependentUpon>cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacCompra.resx">
+      <DependentUpon>FacCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacVenda.resx">
+      <DependentUpon>FacVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fornecedor.resx">
+      <DependentUpon>fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoVendas.resx">
+      <DependentUpon>HistoricoVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputDocs.resx">
+      <DependentUpon>InputDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inserir_autor.resx">
+      <DependentUpon>inserir_autor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inserir_editora.resx">
+      <DependentUpon>inserir_editora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inserir_Livros.resx">
+      <DependentUpon>Inserir_Livros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invetario.resx">
+      <DependentUpon>invetario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="welcome.resx">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LivrariaDataSet.xsc">
+      <DependentUpon>LivrariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LivrariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LivrariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LivrariaDataSet.xss">
+      <DependentUpon>LivrariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
