@@ -1,16 +1,52 @@
+drop trigger addCliente
+go
+
+CREATE TRIGGER addCliente
+ON Utilizador
+FOR INSERT
+AS
+BEGIN
+	DECLARE @NIF BIGINT
+	Select @NIF = NIF from inserted
+
+	INSERT INTO Cliente (NIF, Tipo)
+		VALUES (@NIF,'Cliente')
+END
+GO
+
+
+drop trigger addFornecedor
+go
+
+CREATE TRIGGER addFornecedor
+ON Utilizador
+FOR INSERT
+AS
+BEGIN
+	DECLARE @NIF BIGINT
+	Select @NIF = NIF from inserted
+
+	INSERT INTO Fornecedor (NIF, Tipo)
+		VALUES (@NIF,'Fornecedor')
+END
+GO
+
+
+
+
 drop trigger addProdOnBook
 go
---No need for this trigger
+
 CREATE TRIGGER addProdOnBook
-ON Livro
+ON Produto
 FOR INSERT
 AS
 BEGIN
 	DECLARE @Ref_Book BIGINT
 	Select @Ref_Book = Ref from inserted
 
-	INSERT INTO Produto (Ref, Tipo, Tipo_Nome)
-		VALUES (@Ref_Book,1,'Livro')
+	INSERT INTO Livro (Ref, Tipo)
+		VALUES (@Ref_Book,'Livro')
 END
 GO
 
@@ -18,20 +54,18 @@ GO
 
 drop trigger addProdOnPacote
 go
---No need for this trigger
+
 create trigger addProdOnPacote
-ON Pacote
+ON Produto
 FOR INSERT
 AS
 BEGIN
 	DECLARE @Ref_Pacote BIGINT
 	Select @Ref_Pacote = Ref from inserted
 
-	IF NOT EXISTS (SELECT * from Produto where Ref = @Ref_Pacote)
-	Begin
-	INSERT INTO Produto (Ref, Tipo, Tipo_Nome)
-		VALUES (@Ref_Pacote,2,'Pacote')
-	END
+	INSERT INTO Pacote (Ref, Tipo)
+	VALUES (@Ref_Pacote,'Pacote')
+
 END
 GO
 

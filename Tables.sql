@@ -25,6 +25,25 @@ CREATE TABLE Utilizador(
 	
 );
 
+Drop Table Cliente
+Create Table Cliente (
+	NIF INT PRIMARY KEY,
+	Tipo varchar(7) default('Cliente'),
+
+	foreign key (NIF) references Utilizador(NIF)
+)
+
+
+
+Drop Table Fornecedor
+Create Table Fornecedor (
+	NIF INT PRIMARY KEY,
+	Tipo varchar(10) default('Fornecedor'),
+
+	foreign key (NIF) references Utilizador(NIF)
+)
+
+
 
 drop table Produto
 CREATE TABLE Produto (
@@ -41,6 +60,25 @@ CREATE TABLE Produto (
 	foreign key (ID_Editora) references Editora(Identificador),
 	foreign key (ID_Autor) references Autor(Identificador)
 );
+
+
+Drop table Livro
+Create table Livro (
+	Ref BIGINT Primary key,
+	Tipo varchar(5) default('Livro'),
+
+	foreign key (Ref) references Produto(Ref)
+);
+
+
+
+drop table Pacote
+Create Table Pacote (
+	Ref BIGINT Primary key,
+	Tipo varchar(6) default('Pacote'),
+
+	foreign key (Ref) references Produto(Ref)
+)
 
 
 
@@ -82,3 +120,5 @@ create table Historico_vendas
 	foreign key (Ref_Produto) references Produto(Ref)
 	
 );
+
+
