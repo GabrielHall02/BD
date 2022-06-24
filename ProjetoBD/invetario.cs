@@ -40,9 +40,9 @@ namespace ProjetoBD
                 if(textBox.Name == "Editora" || textBox.Name=="Autor") 
                     return textBox.Name +".Nome = '"+ textBox.Text +"'";
                 if(textBox.Name == "Titulo")
-                    return "Livro."+textBox.Name+" = '"+textBox.Text +"'";
+                    return "Produto."+textBox.Name+" = '"+textBox.Text +"'";
                 if(textBox.Name == "ISBN")
-                    return "Livro.Ref = '" + textBox.Text +"'";
+                    return "Produto.Ref = '" + textBox.Text +"'";
 
             }
             return "";
@@ -72,7 +72,7 @@ namespace ProjetoBD
                 }
                 
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Ref, Titulo, Price, Editora.Nome AS Editora, Autor.Nome AS Autor, Stock FROM " +
-                "Livro JOIN Editora ON ID_Editora = Editora.Identificador JOIN Autor ON ID_Autor = Autor.Identificador " +
+                "Produto JOIN Editora ON ID_Editora = Editora.Identificador JOIN Autor ON ID_Autor = Autor.Identificador " +
                 total, con);
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);

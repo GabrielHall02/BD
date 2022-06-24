@@ -28,9 +28,8 @@ namespace ProjetoBD
             using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-JLR4AMV;Initial Catalog=Livraria;Integrated Security=True"))
             {
                 con.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Ref_Produto, Titulo, Price, Qt, Data_Venda FROM Historico_vendas " +
-                    "JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref " +
-                    "JOIN Livro on Produto.Ref = Livro.Ref", con);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Ref, Titulo, Price, Qt, Data_Venda FROM Historico_vendas " +
+                    "JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref ", con);
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -38,9 +37,14 @@ namespace ProjetoBD
                 SqlCommand cmd = new SqlCommand("select dbo.get_Faturacao() as Total", con);
                 var rd = cmd.ExecuteReader();
                 rd.Read();
-                int total = (int)rd["Total"];
+                string tota = rd["Total"].ToString();
+                if (!String.IsNullOrEmpty(tota))
+                {
+                    int total = (int)rd["Total"];
 
-                label3.Text = total.ToString()+"€";
+                    label3.Text = total.ToString()+"€";
+                }
+                
 
             }
         }
@@ -56,8 +60,7 @@ namespace ProjetoBD
             {
                 con.Open();
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Ref_Produto, Titulo, Price, Desconto, Qt,  Data_Venda FROM Historico_vendas " +
-                    "JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref " +
-                    "JOIN Livro on Produto.Ref = Livro.Ref ORDER BY Data_Venda ASC", con);
+                    "JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref ORDER BY Data_Venda ASC", con);
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);
                 dataGridView1.DataSource = dt;

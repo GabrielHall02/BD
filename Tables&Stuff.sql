@@ -1,32 +1,34 @@
 -- CREATE DATABASE Livraria;
  
 
+drop table Produto
 CREATE TABLE Produto (
 	Ref BIGINT Not null,
 	Tipo INT,
-	Tipo_Nome VARCHAR(7) NOT NULL,
+	Tipo_Nome VARCHAR(7) NOT NULL
 
-	constraint ID_Produto primary key (Ref, tipo)
+	primary key (Ref),
+	foreign key (Ref) references Livro(Ref)
 );
 
 
 
-/*
+drop table Editora
 CREATE TABLE Editora(
 	Identificador INT PRIMARY KEY,
 	Nome VARCHAR(25) NOT NULL,
 );
-*/
+
 
 -- INSERT INTO Editora
 -- VALUES (1, 'Bruaa'),(2,'Planeta Tangerina'),(3,'Leya'),(4,'Orfeu Negro')
 
-/*
+Drop table autor
 CREATE TABLE Autor(
 	Identificador INT PRIMARY KEY,
 	Nome VARCHAR(25) NOT NULL,
 );
-*/
+
 
 /*
 alter table Livro
@@ -53,18 +55,18 @@ references Editora(Identificador)
 --(6,'Madalena Matoso'),(7,'Joana Estrela'),(8,'Joaquim Agil'),(9,'Manuel Afonso')
 
 
-/*
+Drop table Cliente
 CREATE TABLE Cliente(
 	NIF INT PRIMARY KEY,
 	Nome VARCHAR(15) NOT NULL,
 	Endereco VARCHAR(25),
 );
-*/
+
 
 --INSERT INTO Cliente
 --VALUES
 
-/*
+Drop table Utilizador
 CREATE TABLE Utilizador(
 	NIF INT PRIMARY KEY,
 	Nome VARCHAR(15) NOT NULL,
@@ -76,7 +78,9 @@ CREATE TABLE Utilizador(
 INSERT INTO Utilizador
 VALUES (84920494, 'Gigoes', 'Rua Leitao 30',2 ),(151333450,'Anantes','Rua Dr. Nascimento 10',2),
 (185917583,'Manuela Silva',Null,1),(24206944,'Joao Feliz','Rua Lebre 20',1),(102947563,'Jose Alberto',Null,1);
-*/
+
+
+Drop table Documento
 
 
 CREATE TABLE Documento(
@@ -93,7 +97,7 @@ INSERT into Documento (Tipo, Data, NIF)
 Values(2,'2022/06/01',84920494),(1,'2022/06/07',185917583),(1,'2022/06/07',102947563),
 (2,'2022/06/02',151333450)
 
-
+Drop table Livro
 CREATE TABLE Livro(
 	Ref BIGINT primary key,
 	Titulo varchar(30),
@@ -133,7 +137,7 @@ VALUES(978907285,'Homem da Lua',6.5,6,2,8,1)
 
 select * from Livro
 
-
+Drop table Pacote
 Create table Pacote(
 	Ref INT NOT NULL,
 	Nome varchar(30) Not null,
@@ -155,7 +159,7 @@ Values(5681934,'Bag of Books','978907285')
 
 delete from Pacote where Nome = 'Bag of Books'
 
-
+Drop table Linha_Fatura
 create table Linha_Fatura(
 	n_linha INT default 999,
 	ID_Fac INT, --FK
@@ -202,18 +206,16 @@ Values(4,986203811,9.90, 30, 5)
 select * from Livro
 select * from Produto
 
-/*
+
 
 alter table Documento
-add foreign key (NIF) references Utilizador(NIF);
+add constraint NIF foreign key (NIF) references Utilizador(NIF);
 
-*/
 
-/*
+
 alter table Livro
 add foreign key (ID_Editora) references Editora(Identificador),
-	foreign key (ID_Autor) references Autor(Identificador),
-*/
+	foreign key (ID_Autor) references Autor(Identificador)
 
 
 
@@ -223,12 +225,13 @@ alter table Pacote
 */
 
 
-/*
-alter table Linha_Fatura
-	add foreign key (ID_Fac) references Documento(Identificador),
-		foreign key (Ref_Item) references 
-*/
 
+alter table Linha_Fatura
+	add foreign key (ID_Fac) references Documento(Identificador)
+alter table Linha_Fatura
+	add foreign key (Ref_Item) references Produto(Ref)
+
+drop table Historico_vendas
 create table Historico_vendas
 (
 	Ref_Produto BIGINT,
@@ -358,13 +361,16 @@ END
 
 
 
+--UDF
+
+
 Create function get_Price(@Ref BIGINT)
 Returns numeric
 as
 begin
 return
 (
-Select Price from Livro where Ref = @Ref 
+Select Price from Produto where Ref = @Ref 
 )
 end
 
@@ -399,11 +405,14 @@ as
 begin
 return
 (	
-SELECT SUM(Price*Qt*(100-Desconto)/100) AS Total  FROM Historico_vendas JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref JOIN Livro on Produto.Ref = Livro.Ref
+SELECT SUM(Price*Qt*(100-Desconto)/100) AS Total  FROM Historico_vendas JOIN Produto on Historico_vendas.Ref_Produto = Produto.Ref 
 )
 end
 
 drop function get_Faturacao
+
+
+
 
 select dbo.get_Faturacao() as Total
 
@@ -472,5 +481,16 @@ Delete from Autor where Nome = @Name
 
 go
 
+
+
+--Views
+
+
+
+
+create view inventario
+as
+SELECT Ref, Titulo, Price, Editora.Nome AS Editora, Autor.Nome AS Autor, Stock
+FROM Livro JOIN Editora ON ID_Editora = Editora.Identificador JOIN Autor ON ID_Autor = Autor.Identificador
 
 

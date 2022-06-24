@@ -53,8 +53,8 @@ namespace ProjetoBD
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Livro (Ref, Titulo, Price, Iva, ID_Editora, ID_Autor, Tipo_Produto) " +
-                "Values (@Ref, @Titulo, @Price, @Iva, @ID_Editora, @ID_Autor, @Tipo_Produto)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Produto (Ref, Titulo, Price, Iva, ID_Editora, ID_Autor, Tipo) " +
+                "Values (@Ref, @Titulo, @Price, @Iva, @ID_Editora, @ID_Autor, @Tipo)", con);
 
             cmd.Parameters.AddWithValue("@Ref", int.Parse(textBox1.Text));
             cmd.Parameters.AddWithValue("@Titulo", textBox2.Text);
@@ -62,7 +62,7 @@ namespace ProjetoBD
             cmd.Parameters.AddWithValue("@Iva", int.Parse(textBox4.Text));
             cmd.Parameters.AddWithValue("@ID_Editora", getIdFromNomeEditora(textBox5.Text));
             cmd.Parameters.AddWithValue("@ID_Autor", getIdFromNomeAutor(textBox6.Text));
-            cmd.Parameters.AddWithValue("@Tipo_Produto", 1);
+            cmd.Parameters.AddWithValue("@Tipo", 1);
 
             cmd.ExecuteNonQuery();
 
@@ -76,7 +76,7 @@ namespace ProjetoBD
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Update Livro set Titulo=@Titulo, Price=@Price, Iva=@Iva, ID_Editora=@ID_Editora, ID_Autor=@ID_Autor, Tipo_Produto=@Tipo_Produto WHERE Ref=@Ref", con);
+            SqlCommand cmd = new SqlCommand("Update Produto set Titulo=@Titulo, Price=@Price, Iva=@Iva, ID_Editora=@ID_Editora, ID_Autor=@ID_Autor, Tipo=@Tipo WHERE Ref=@Ref", con);
             var myCommand = new SqlCommand("SELECT Ref From Livro WHERE Ref = @Ref", con);
 
             myCommand.Parameters.AddWithValue("@Ref", int.Parse(textBox1.Text));
@@ -91,7 +91,7 @@ namespace ProjetoBD
                 cmd.Parameters.AddWithValue("@Iva", int.Parse(textBox4.Text));
                 cmd.Parameters.AddWithValue("@ID_Editora", getIdFromNomeEditora(textBox5.Text));
                 cmd.Parameters.AddWithValue("@ID_Autor", getIdFromNomeAutor(textBox6.Text));
-                cmd.Parameters.AddWithValue("@Tipo_Produto", 1);
+                cmd.Parameters.AddWithValue("@Tipo", 1);
                 rd.Close();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Updated with success");
@@ -111,9 +111,8 @@ namespace ProjetoBD
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("DELETE FROM Livro WHERE Ref=@Ref", con);
-            var myCommand = new SqlCommand("SELECT Ref From Livro WHERE Ref = @Ref", con);
-            SqlCommand com = new SqlCommand("Delete From Produto where Ref = @Ref",con);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Produto WHERE Ref=@Ref", con);
+            var myCommand = new SqlCommand("SELECT Ref From Produto WHERE Ref = @Ref", con);
 
             myCommand.Parameters.AddWithValue("@Ref", int.Parse(textBox1.Text));
             var rd = myCommand.ExecuteReader();
