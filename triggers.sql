@@ -1,76 +1,56 @@
-drop trigger addCliente
+drop trigger addUserTyoe
 go
 
-CREATE TRIGGER addCliente
+CREATE TRIGGER addUserTyoe
 ON Utilizador
 FOR INSERT
 AS
 BEGIN
-	DECLARE @NIF BIGINT
-	Select @NIF = NIF from inserted
-
+	DECLARE @NIF BIGINT, @Tipo INT
+	Select @NIF = NIF, @Tipo = Tipo from inserted
+	IF (@Tipo = 1)
+	Begin
 	INSERT INTO Cliente (NIF, Tipo)
 		VALUES (@NIF,'Cliente')
-END
-GO
+	END
 
-
-drop trigger addFornecedor
-go
-
-CREATE TRIGGER addFornecedor
-ON Utilizador
-FOR INSERT
-AS
-BEGIN
-	DECLARE @NIF BIGINT
-	Select @NIF = NIF from inserted
-
+	IF (@Tipo = 2)
+	Begin
 	INSERT INTO Fornecedor (NIF, Tipo)
 		VALUES (@NIF,'Fornecedor')
+	END
+
 END
 GO
 
 
 
-
-drop trigger addProdOnBook
+drop trigger addProdType
 go
-
-CREATE TRIGGER addProdOnBook
+CREATE TRIGGER addProdType
 ON Produto
 FOR INSERT
 AS
 BEGIN
-	DECLARE @Ref_Book BIGINT
-	Select @Ref_Book = Ref from inserted
-
-	INSERT INTO Livro (Ref, Tipo)
-		VALUES (@Ref_Book,'Livro')
+	DECLARE @Ref BIGINT, @Tipo INT
+	Select @Ref = Ref, @Tipo = Tipo from inserted
+	IF (@Tipo = 1)
+	Begin
+		INSERT INTO Livro (Ref, Tipo)
+			VALUES (@Ref,'Livro')
+	End
+	IF (@Tipo = 2)
+	Begin
+		INSERT INTO Pacote (Ref, Tipo)
+		VALUES (@Ref,'Pacote')
+	End
 END
 GO
 
-
-
-drop trigger addProdOnPacote
-go
-
-create trigger addProdOnPacote
-ON Produto
-FOR INSERT
-AS
-BEGIN
-	DECLARE @Ref_Pacote BIGINT
-	Select @Ref_Pacote = Ref from inserted
-
-	INSERT INTO Pacote (Ref, Tipo)
-	VALUES (@Ref_Pacote,'Pacote')
-
-END
-GO
 
 
 drop trigger trg_updateStocks
+go
 create trigger trg_updateStocks
 ON Linha_Fatura
 FOR INSERT 
@@ -117,28 +97,30 @@ GO
 
 
 drop trigger update_line
-create trigger update_Line
-ON Linha_Fatura
+go
+create trigger dbo.update_Line
+ON dbo.Linha_Fatura
 FOR INSERT 
 AS 
 BEGIN
-	--check if doc exists
+
 	declare @ID_Fac INT
 
 	select @ID_Fac = ID_Fac from inserted
 
-
-	if exists(select Identificador from Documento where Identificador =  @ID_Fac)
-	Begin
+	--check if doc exists
+	--if exists(select Identificador from Documento where Identificador =  @ID_Fac)
+	--Begin
 		--get lines from doc
-		--if exists(select n_linha from Linha_Fatura where ID_Fac =  @ID_Fac)
-		--begin
-			declare @num INT
-			select @num = count(n_linha) from Linha_Fatura where ID_Fac =  @ID_Fac
-			update Linha_Fatura set n_linha = @num where n_linha = 999
 
-		--end
-	end
+		declare @num INT
+		select @num = count(n_linha) from dbo.Linha_Fatura where ID_Fac =  @ID_Fac
+		update dbo.Linha_Fatura set n_linha = @num, ID_Fac = @ID_Fac where n_linha = 999
+	--end
 END
+go
+
+
+
 
 

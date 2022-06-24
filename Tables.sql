@@ -25,6 +25,8 @@ CREATE TABLE Utilizador(
 	
 );
 
+
+
 Drop Table Cliente
 Create Table Cliente (
 	NIF INT PRIMARY KEY,
@@ -57,8 +59,8 @@ CREATE TABLE Produto (
 	Stock INT Not null default 0,
 
 	primary key (Ref),
-	foreign key (ID_Editora) references Editora(Identificador),
-	foreign key (ID_Autor) references Autor(Identificador)
+	foreign key (ID_Editora) references Editora(Identificador) ON DELETE SET NULL,
+	foreign key (ID_Autor) references Autor(Identificador) ON DELETE SET NULL
 );
 
 
@@ -67,7 +69,7 @@ Create table Livro (
 	Ref BIGINT Primary key,
 	Tipo varchar(5) default('Livro'),
 
-	foreign key (Ref) references Produto(Ref)
+	foreign key (Ref) references Produto(Ref) ON DELETE CASCADE
 );
 
 
@@ -77,7 +79,7 @@ Create Table Pacote (
 	Ref BIGINT Primary key,
 	Tipo varchar(6) default('Pacote'),
 
-	foreign key (Ref) references Produto(Ref)
+	foreign key (Ref) references Produto(Ref) ON DELETE CASCADE
 )
 
 
@@ -98,14 +100,15 @@ Drop table Linha_Fatura
 create table Linha_Fatura(
 	n_linha INT default 999,
 	ID_Fac INT, --FK
-	Ref_Item BIGINT not null, --FK
+	Ref_Item BIGINT, --FK
 	Price numeric not null,
 	Desconto int,
 	Quantity int not null,
+
 	Primary key (n_linha, ID_Fac),
 
 	foreign key (ID_Fac) references Documento(Identificador),
-	foreign key (Ref_Item) references Produto(Ref)
+	foreign key (Ref_Item) references Produto(Ref) ON DELETE SET NULL
 );
 
 
@@ -117,7 +120,7 @@ create table Historico_vendas
 	Qt INT,
 	Desconto INT,
 	Data_Venda DATETIME,
-	foreign key (Ref_Produto) references Produto(Ref)
+	foreign key (Ref_Produto) references Produto(Ref) ON DELETE SET NULL
 	
 );
 

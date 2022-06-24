@@ -1,14 +1,15 @@
+truncate table Editora
 INSERT INTO Editora (Nome)
 VALUES ('Bruaa'),('Planeta Tangerina'),('Leya'),('Orfeu Negro')
 select * from Editora
 
-
+truncate table Autor
 INSERT INTO Autor (Nome)
 VALUES ('Ines Machado'),('Miguel Gouveia'),('Joao Fazeda'),('Henrique Moreria'),('Ana Pessoa'),
 ('Madalena Matoso'),('Joana Estrela'),('Joaquim Agil'),('Manuel Afonso')
 select * from Autor
 
-
+truncate table Produto
 insert into Produto (Ref, Titulo, Price, Iva, ID_Editora, ID_Autor, Tipo)
 values(978923658,'Urso Castanho',10.50,6,1,3,1)
 insert into Produto (Ref, Titulo, Price, Iva, ID_Editora, ID_Autor, Tipo)
@@ -28,17 +29,31 @@ VALUES(978930031,'A Vinganca do Galo',6.5,6,2,7,1)
 insert into Produto (Ref, Titulo, Price, Iva, ID_Editora, ID_Autor, Tipo)
 VALUES(978907285,'Homem da Lua',6.5,6,2,8,1)
 select * from Produto
+select * from Livro
 
+truncate table Utilizador
 INSERT INTO Utilizador
-VALUES (84920494, 'Gigoes', 'Rua Leitao 30',2 ),(151333450,'Anantes','Rua Dr. Nascimento 10',2),
-(185917583,'Manuela Silva',Null,1),(24206944,'Joao Feliz','Rua Lebre 20',1),(102947563,'Jose Alberto',Null,1);
+VALUES (84920494, 'Gigoes', 'Rua Leitao 30',2 )
+INSERT INTO Utilizador
+VALUES (151333450,'Anantes','Rua Dr. Nascimento 10',2)
+INSERT INTO Utilizador
+VALUES (185917583,'Manuela Silva',Null,1)
+INSERT INTO Utilizador
+VALUES (24206944,'Joao Feliz','Rua Lebre 20',1)
+INSERT INTO Utilizador
+VALUES (102947563,'Jose Alberto',Null,1);
+select * from Utilizador
+select * from Cliente
+select * from Fornecedor
 
-
+truncate table Documento
 INSERT into Documento (Tipo, Data, NIF)
 Values(2,'2022/06/01',84920494),(1,'2022/06/07',185917583),(1,'2022/06/07',102947563),
 (2,'2022/06/02',151333450)
+select * from Documento
 
 
+truncate table Linha_Fatura
 Insert into Linha_Fatura (ID_Fac,Ref_Item,Price,Desconto,Quantity)
 Values(1,978483987,6.5, 30, 5);
 Insert into Linha_Fatura (ID_Fac,Ref_Item,Price,Desconto,Quantity)
@@ -63,5 +78,6 @@ Insert into Linha_Fatura (ID_Fac,Ref_Item,Price,Desconto,Quantity)
 Values(4,973258628,12.5, 30, 5)
 Insert into Linha_Fatura (ID_Fac,Ref_Item,Price,Desconto,Quantity)
 Values(4,986203811,9.90, 30, 5)
-
+select * from Linha_Fatura
+select * from Historico_vendas
 
