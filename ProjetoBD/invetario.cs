@@ -20,7 +20,7 @@ namespace ProjetoBD
 
         private void invetario_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-JLR4AMV;Initial Catalog=Livraria;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=p8g6;Persist Security Info=True;User ID=p8g6;Password=1710358134@BD"))
             {
                 con.Open();
                     SqlDataAdapter sqlDa = new SqlDataAdapter("select * from inventario",con);
@@ -50,7 +50,7 @@ namespace ProjetoBD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-JLR4AMV;Initial Catalog=Livraria;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=p8g6;Persist Security Info=True;User ID=p8g6;Password=1710358134@BD"))
             {
 
                 con.Open();

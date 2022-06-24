@@ -21,7 +21,7 @@ namespace ProjetoBD
         private void button4_Click(object sender, EventArgs e)
         {
             //Criar Documento novo do tipo fatura de venda
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-JLR4AMV;Initial Catalog=Livraria;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=p8g6;Persist Security Info=True;User ID=p8g6;Password=1710358134@BD");
             con.Open();
 
             SqlCommand cmd = new SqlCommand("INSERT into Documento(Tipo, Data, NIF) Values (@Tipo, @Data, @NIF)", con);
@@ -52,7 +52,7 @@ namespace ProjetoBD
                 facVenda1.BringToFront();
 
                 //Criar Documento novo do tipo fatura de venda
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-JLR4AMV;Initial Catalog=Livraria;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=tcp:mednat.ieeta.pt\SQLSERVER,8101;Initial Catalog=p8g6;Persist Security Info=True;User ID=p8g6;Password=1710358134@BD");
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand("INSERT into Documento(Tipo, Data, NIF) Values (@Tipo, @Data, @NIF)", con);
